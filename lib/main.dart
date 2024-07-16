@@ -11,35 +11,18 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green[700],
         centerTitle: true,
       ),
-      body: Center(
-        child: SizedBox(
-          width: 200, // Specify a width for the button
-          child: TextButton(
-            onPressed: () {
-              print("clicked");
-            },
-            child: Row(
-              children: <Widget>[
-                Icon(Icons.alternate_email), // The icon
-                SizedBox(
-                    width: 8), // Add some space between the icon and the text
-                Text(
-                  'Email', // The custom text
-                  style: TextStyle(
-                    fontFamily: 'IndieFlower',
-                    fontSize: 24, // Change the font size
-                    color: Colors.amber[600], // Change the font color
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        margin: EdgeInsets.all(60),
+        color: Colors.grey[400],
+        child: Text("Hello"),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Text("Click"),
-        onPressed: () => print("Clicked"),
-        backgroundColor: Colors.green[500],
+        onPressed: () {
+          print("Hello");
+        },
+        child: Text("Click Me"),
+        backgroundColor: Colors.green[700],
       ),
     );
   }
