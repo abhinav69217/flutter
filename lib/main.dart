@@ -16,9 +16,17 @@ class QuoteList extends StatefulWidget {
 
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
-    Quote(text: "Be yourself", author: "oscar"),
-    Quote(text: "Be yourself", author: "oscar"),
-    Quote(text: "Be yourself", author: "oscar"),
+    Quote(
+        text:
+            "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        author: "Nelson Mandela"),
+    Quote(
+        text: "The way to get started is to quit talking and begin doing.",
+        author: "Walt Disney"),
+    Quote(
+        text:
+            "Your time is limited, so don't waste it living someone else's life.",
+        author: "Steve Jobs"),
   ];
 
   @override
@@ -31,7 +39,15 @@ class _QuoteListState extends State<QuoteList> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((q) => QuoteCard(q: q)).toList(),
+        children: quotes
+            .map((q) => QuoteCard(
+                q: q,
+                delete: () {
+                  setState(() {
+                    quotes.remove(q);
+                  });
+                }))
+            .toList(),
       ),
     );
   }
